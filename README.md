@@ -91,6 +91,3 @@ The application will start on `http://localhost:8080`
 4. Create books with author relationships
 5. Test borrowing functionality
 
-
-## Author
-Ange Mireille - Library Management System Implementation
