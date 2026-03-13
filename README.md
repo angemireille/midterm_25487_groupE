@@ -70,24 +70,6 @@ GET    /api/book/search
 ```
 
 ### Database Setup
-1. Create PostgreSQL database: `library_db`
-2. Update database credentials in `application.properties`
-
-
-### Running the Application
-```bash
-mvn clean install
-mvn spring-boot:run
-```
+PostgreSQL database: `library_db`
 
 The application will start on `http://localhost:8080`
-
-## Testing
-
-### Sample Data Creation Order
-1. Create locations (Province → District → Sector → Cell → Village)
-2. Create categories and authors
-3. Create members with addresses
-4. Create books with author relationships
-5. Test borrowing functionality
-
