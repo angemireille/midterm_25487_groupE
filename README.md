@@ -69,26 +69,10 @@ GET    /api/book/sorted
 GET    /api/book/search
 ```
 
-## Setup Instructions
-
-### Prerequisites
-- Java 17+
-- PostgreSQL 12+
-- Maven 3.6+
-
 ### Database Setup
 1. Create PostgreSQL database: `library_db`
 2. Update database credentials in `application.properties`
 
-### Environment Variables
-Set the following environment variables:
-```bash
-DB_URL=jdbc:postgresql://localhost:5432/library_db
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
-EMAIL_USERNAME=your_email@gmail.com
-EMAIL_PASSWORD=your_app_password
-```
 
 ### Running the Application
 ```bash
@@ -107,31 +91,6 @@ The application will start on `http://localhost:8080`
 4. Create books with author relationships
 5. Test borrowing functionality
 
-### Key Test Scenarios
-- **Location Hierarchy**: Test parent-child relationships
-- **Pagination**: Test with different page sizes and sorting
-- **Province Queries**: Test member retrieval by province code/name
-- **Many-to-Many**: Test book-author associations
-- **Authentication**: Test 2FA login flow
-
-## Assignment Requirements Fulfilled
-
-1. ✅ **ERD with 5+ tables** - 7 entities with clear relationships
-2. ✅ **Location Saving** - Hierarchical validation and storage
-3. ✅ **Sorting & Pagination** - Implemented with Spring Data JPA
-4. ✅ **Many-to-Many** - Book-Author relationship with join table
-5. ✅ **One-to-Many** - Category-Book, Location hierarchy
-6. ✅ **One-to-One** - Member-Address relationship
-7. ✅ **existBy() Methods** - Email, name, code existence checking
-8. ✅ **Province Queries** - Multiple ways to retrieve users by province
-
-## Technologies Used
-- Spring Boot 3.x
-- Spring Data JPA
-- PostgreSQL
-- Spring Mail
-- Maven
-- Jakarta Persistence API
 
 ## Author
 Ange Mireille - Library Management System Implementation
