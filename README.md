@@ -5,18 +5,6 @@ A comprehensive Spring Boot application for managing library operations with hie
 ## Entity Relationship Diagram
 ![Library Management System ERD](docs/Library_Management_ERD.png)
 
-## Assignment Requirements ✅
-
-This project demonstrates all 8 required features:
-
-1. **✅ ERD with 5+ Tables**: 7 entities (Location, Member, Book, Author, Category, Borrow, Address)
-2. **✅ Location Saving**: Hierarchical location management system
-3. **✅ Sorting & Pagination**: Implemented for books and members
-4. **✅ Many-to-Many Relationships**: Book ↔ Author with join table
-5. **✅ One-to-Many Relationships**: Category → Book, Location hierarchy
-6. **✅ One-to-One Relationships**: Member ↔ Address
-7. **✅ existBy() Methods**: Implemented in repositories (existsByEmail, existsByName, existsByTitleAndAuthors_Authorid)
-8. **✅ Province-based Queries**: Query members by province code/name/ID
 
 ## Features
 
@@ -85,9 +73,9 @@ GET    /api/book/sorted
 GET    /api/book/search
 ```
 
-## Quick Testing Guide
+## Testing Guide
 
-### 1. Test Location Hierarchy (Requirements 2 & 5)
+### 1. Test Location Hierarchy
 ```bash
 # Create Province
 POST /api/locations/save
@@ -102,7 +90,7 @@ GET /api/locations/provinces
 GET /api/locations/districts/11
 ```
 
-### 2. Test Many-to-Many Relationship (Requirement 4)
+### 2. Test Many-to-Many Relationship 
 ```bash
 # Create Author
 POST /api/author/save
@@ -117,13 +105,13 @@ POST /api/book/add
 {"title": "Dune", "authorIds": [1], "category_id": 1, "language": "English", "totalCopies": 5, "availableCopies": 5}
 ```
 
-### 3. Test Pagination & Sorting (Requirement 3)
+### 3. Test Pagination & Sorting
 ```bash
 GET /api/book/paginated?page=0&size=5&sortBy=title&direction=asc
 GET /api/member/sorted?sortBy=name&direction=desc
 ```
 
-### 4. Test Province Queries (Requirement 8)
+### 4. Test Province Queries 
 ```bash
 GET /api/member/by-province/code/11
 GET /api/member/by-province/name/Kigali City
@@ -137,21 +125,4 @@ spring.datasource.username=postgres
 spring.datasource.password=123
 ```
 
-## Technologies Used
 
-- **Spring Boot 3.x**
-- **Spring Data JPA**
-- **PostgreSQL**
-- **Spring Security** (for authentication)
-- **JavaMail** (for 2FA)
-- **Maven** (build tool)
-
-## Author
-
-**Ange Mireille**  
-Midterm Project - Group E  
-March 2026
-
----
-
-**GitHub Repository**: https://github.com/angemireille/midterm_25487_groupE
