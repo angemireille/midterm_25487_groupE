@@ -3,6 +3,7 @@ package AngeMireille.library_management_system.model;
 import java.util.Set;
 import jakarta.persistence.*;
 import java.util.HashSet;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="author")
@@ -16,6 +17,7 @@ public class Author {
     private String name;
 
     @ManyToMany(mappedBy = "authors")
+    @JsonIgnore
     private Set<Book> booksManyToMany = new HashSet<>();
 
     public Author(int authorid, String name) {
