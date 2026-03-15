@@ -156,16 +156,3 @@ PROVINCE
 Each level references its parent, creating a hierarchical location system.
 
 ---
-
-## Assignment Requirements Satisfied
-
-✅ **Requirement 1:** ERD with 5+ tables (7 entities)
-✅ **Requirement 4:** Many-to-Many relationships (Book ↔ Author)
-✅ **Requirement 5:** One-to-Many relationships (Category → Book, Location hierarchy)
-✅ **Requirement 6:** One-to-One relationships (Member ↔ Address)
-
----
-
-**Created by:** Ange Mireille  
-**Project:** Library Management System  
-**Date:** March 2026
