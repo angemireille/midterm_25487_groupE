@@ -1,6 +1,7 @@
 package AngeMireille.library_management_system.controller;
 
 import AngeMireille.library_management_system.dto.BookDTO;
+import AngeMireille.library_management_system.dto.BookSaveDTO;
 import AngeMireille.library_management_system.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,8 @@ public class BookController {
     private BookService bookService;
 
     @PostMapping("/add")
-    public ResponseEntity<BookDTO> addBook(@RequestBody BookDTO bookDTO) {
-        return ResponseEntity.ok(bookService.addBook(bookDTO));
+    public ResponseEntity<BookDTO> addBook(@RequestBody BookSaveDTO bookSaveDTO) {
+        return ResponseEntity.ok(bookService.addBook(bookSaveDTO));
     }
 
     @GetMapping("/all")

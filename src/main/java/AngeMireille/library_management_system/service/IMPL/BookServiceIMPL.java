@@ -1,6 +1,7 @@
 package AngeMireille.library_management_system.service.IMPL;
 
 import AngeMireille.library_management_system.dto.BookDTO;
+import AngeMireille.library_management_system.dto.BookSaveDTO;
 import AngeMireille.library_management_system.model.Author;
 import AngeMireille.library_management_system.model.Book;
 import AngeMireille.library_management_system.model.Category;
@@ -51,6 +52,29 @@ public BookDTO addBook(BookDTO bookDTO) {
             bookDTO.getLanguage(),
             bookDTO.getTotalCopies(),
             bookDTO.getAvailableCopies()
+    );
+    Book saved = bookRepo.save(book);
+    return toDTO(saved);
+}
+
+public BookDTO addBook(BookSaveDTO bookSaveDTO) {
+    Set<Author> authors = new HashSet<>();
+    for (Integer authorId : bookSaveDTO.getAuthorIds()) {
+        Author existingAuthor = authorRepo.findById(authorId)
+                .orElseThrow(() -> new RuntimeException("Author not found with ID: " + authorId));
+        authors.add(existingAuthor);
+    }
+    
+    Category category = categoryRepo.findById(bookSaveDTO.getCategory_id())
+            .orElseThrow(() -> new RuntimeException("Category not found with ID: " + bookSaveDTO.getCategory_id()));
+
+    Book book = new Book(
+            bookSaveDTO.getTitle(),
+            authors,
+            category,
+            bookSaveDTO.getLanguage(),
+            bookSaveDTO.getTotalCopies(),
+            bookSaveDTO.getAvailableCopies()
     );
     Book saved = bookRepo.save(book);
     return toDTO(saved);
